@@ -1,0 +1,454 @@
+#!/bin/bash
+function DeleteBackUp {
+##################Удаление старых бэкапов####################################################################
+##################PR-SR-RDS-01###############################################################################
+Desktop=/mnt/_SHARE_/BackUpPR/Desktop/
+SpaceBackupPR=`du -sm $Desktop | awk '{print$1}'`
+if [ $SpaceBackupPR -gt $VolBF ];
+   then
+       cd $Desktop
+        while [ `du -sm $Desktop | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $Desktop | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+Documents=/mnt/_SHARE_/BackUpPR/Documents/
+SpaceBackupPR=`du -sm $Documents | awk '{print$1}'`
+if [ $SpaceBackupPR -gt $VolBF ];
+   then
+       cd $Documents
+        while [ `du -sm $Documents | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $Documents | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+PUBLIC=/mnt/_SHARE_/BackUpPR/PUBLIC/
+SpaceBackupPR=`du -sm $PUBLIC | awk '{print$1}'`
+if [ $SpaceBackupPR -gt $VolBF ];
+   then
+       cd $PUBLIC
+        while [ `du -sm $PUBLIC | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $PUBLIC | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+##################ST-SR-RDS-01###############################################################################
+Desktop=/mnt/_SHARE_/BackUpST/Desktop/
+SpaceBackupST=`du -sm $Desktop | awk '{print$1}'`
+if [ $SpaceBackupST -gt $VolBF ];
+   then
+       cd $Desktop
+        while [ `du -sm $Desktop | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $Desktop | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+Documents=/mnt/_SHARE_/BackUpST/Documents/
+SpaceBackupST=`du -sm $Documents | awk '{print$1}'`
+if [ $SpaceBackupST -gt $VolBF ];
+   then
+       cd $Documents
+        while [ `du -sm $Documents | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $Documents | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+PUBLIC=/mnt/_SHARE_/BackUpST/PUBLIC/
+SpaceBackupST=`du -sm $PUBLIC | awk '{print$1}'`
+if [ $SpaceBackupST -gt $VolBF ];
+   then
+       cd $PUBLIC
+        while [ `du -sm $PUBLIC | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $PUBLIC | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+##################AV-SR-RDS-01###############################################################################
+Desktop=/mnt/_SHARE_/BackUpAV/Desktop/
+SpaceBackupAV=`du -sm $Desktop | awk '{print$1}'`
+if [ $SpaceBackupAV -gt $VolBF ];
+   then
+       cd $Desktop
+        while [ `du -sm $Desktop | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $Desktop | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+Documents=/mnt/_SHARE_/BackUpAV/Documents/
+SpaceBackupAV=`du -sm $Documents | awk '{print$1}'`
+if [ $SpaceBackupAV -gt $VolBF ];
+   then
+       cd $Documents
+        while [ `du -sm $Documents | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $Documents | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+PUBLIC=/mnt/_SHARE_/BackUpAV/PUBLIC/
+SpaceBackupAV=`du -sm $PUBLIC | awk '{print$1}'`
+if [ $SpaceBackupAV -gt $VolBF ];
+   then
+       cd $PUBLIC
+        while [ `du -sm $PUBLIC | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $PUBLIC | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+##################AU-SR-RDS-01###############################################################################
+Desktop=/mnt/_SHARE_/BackUpAU/Desktop/
+SpaceBackupAU=`du -sm $Desktop | awk '{print$1}'`
+if [ $SpaceBackupAU -gt $VolBF ];
+   then
+       cd $Desktop
+        while [ `du -sm $Desktop | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $Desktop | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+Documents=/mnt/_SHARE_/BackUpAU/Documents/
+SpaceBackupAU=`du -sm $Documents | awk '{print$1}'`
+if [ $SpaceBackupAU -gt $VolBF ];
+   then
+       cd $Documents
+        while [ `du -sm $Documents | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $Documents | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+PUBLIC=/mnt/_SHARE_/BackUpAU/PUBLIC/
+SpaceBackupAU=`du -sm $PUBLIC | awk '{print$1}'`
+if [ $SpaceBackupAU -gt $VolBF ];
+   then
+       cd $PUBLIC
+        while [ `du -sm $PUBLIC | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $PUBLIC | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+##################EU-SR-RDS-01###############################################################################
+PUBLIC=/mnt/_SHARE_/BackUpEU/PUBLIC/
+SpaceBackupEU=`du -sm $PUBLIC | awk '{print$1}'`
+if [ $SpaceBackupEU -gt $VolBF ];
+   then
+       cd $PUBLIC
+        while [ `du -sm $PUBLIC | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $PUBLIC | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+##################EU-SR-RDS-01###############################################################################
+Desktop=/mnt/_SHARE_/BackUpEU/Desktop/
+SpaceBackupEU=`du -sm $Desktop | awk '{print$1}'`
+if [ $SpaceBackupEU -gt $VolBF ];
+   then
+       cd $Desktop
+        while [ `du -sm $Desktop | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $Desktop | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+Documents=/mnt/_SHARE_/BackUpEU/Documents/
+SpaceBackupEU=`du -sm $Documents | awk '{print$1}'`
+if [ $SpaceBackupEU -gt $VolBF ];
+   then
+       cd $Documents
+        while [ `du -sm $Documents | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $Documents | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+##################TG-SR-RDS-01###############################################################################
+Desktop=/mnt/_SHARE_/BackUpTG/Desktop/
+SpaceBackupTG=`du -sm $Desktop | awk '{print$1}'`
+if [ $SpaceBackupTG -gt $VolBF ];
+   then
+       cd $Desktop
+        while [ `du -sm $Desktop | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $Desktop | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+Documents=/mnt/_SHARE_/BackUpTG/Documents/
+SpaceBackupTG=`du -sm $Documents | awk '{print$1}'`
+if [ $SpaceBackupTG -gt $VolBF ];
+   then
+       cd $Documents
+        while [ `du -sm $Documents | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $Documents | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+PUBLIC=/mnt/_SHARE_/BackUpTG/PUBLIC/
+SpaceBackupTG=`du -sm $PUBLIC | awk '{print$1}'`
+if [ $SpaceBackupTG -gt $VolBF ];
+   then
+       cd $PUBLIC
+        while [ `du -sm $PUBLIC | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $PUBLIC | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+##################TE-SR-SMB-01###############################################################################
+PUBLIC=/mnt/_SHARE_/BackUpTE/
+SpaceBackupTE=`du -sm $PUBLIC | awk '{print$1}'`
+if [ $SpaceBackupTE -gt $VolBF ];
+   then
+       cd $PUBLIC
+        while [ `du -sm $PUBLIC | awk '{print$1}'` -gt $VolBF ]
+        do
+        ls -t $PUBLIC | tail -n1 | xargs -i rm '{}'
+    done
+fi
+#############################################################################################################
+}
+#############################################################################################################
+function BackUpAU {
+#######################BackUpAU##############################################################################
+<<<<<<< HEAD
+mount -t cifs -o ro,user='администратор',password='PASS' //192.168.10.235/c$ /mnt/RDS/AU-SR-RDS-01
+=======
+mount -t cifs -o ro,user='администратор',password='PASS' //192.168.10.235/c$ /mnt/RDS/AU-SR-RDS-01
+>>>>>>> 9153b077dcdf5d8235699ea0e25351148af4bbea
+cd /mnt/_SHARE_/
+echo "AU-SR-RDS-01" > log7z
+echo "Начало архивации: `date +%X-%d-%m-%G`" >> log7z
+cd /mnt/_SHARE_/BackUpAU/PUBLIC/
+7z a -$MX AU_BUH_`date +%d-%m-%G`.7z /mnt/RDS/AU-SR-RDS-01/Users/_AU_BUH_
+cd /mnt/_SHARE_/BackUpAU/Desktop/
+UN=$(find /mnt/RDS/AU-SR-RDS-01/Users/au* -type d -name "Desktop")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+cd /mnt/_SHARE_/BackUpAU/Documents/
+UN=$(find /mnt/RDS/AU-SR-RDS-01/Users/au* -type d -name "Documents")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+cd /mnt/_SHARE_/
+echo "Окончание архивации AU-SR-RDS-01: `date +%X-%d-%m-%G`" >> log7z
+umount /mnt/RDS/AU-SR-RDS-01
+#############################################################################################################
+}
+#############################################################################################################
+function BackUpST {
+#######################BackUpST##############################################################################
+<<<<<<< HEAD
+mount -t cifs -o ro,user='администратор',password='PASS' //192.168.107.143/c$ /mnt/RDS/ST-SR-RDS-01
+=======
+mount -t cifs -o ro,user='администратор',password='PASS' //192.168.107.143/c$ /mnt/RDS/ST-SR-RDS-01
+>>>>>>> 9153b077dcdf5d8235699ea0e25351148af4bbea
+cd /mnt/_SHARE_/
+echo "ST-SR-RDS-01" >> log7z
+echo "Начало архивации: `date +%X-%d-%m-%G`" >> log7z
+cd /mnt/_SHARE_/BackUpST/PUBLIC/
+7z a -$MX _ST_`date +%d-%m-%G`.7z /mnt/RDS/ST-SR-RDS-01/Users/_ST_
+7z a -$MX _SL_`date +%d-%m-%G`.7z /mnt/RDS/ST-SR-RDS-01/Users/_SL_
+cd /mnt/_SHARE_/BackUpST/Desktop/
+UN=$(find /mnt/RDS/ST-SR-RDS-01/Users/st* -type d -name "Desktop")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+cd /mnt/_SHARE_/BackUpST/Documents/
+UN=$(find /mnt/RDS/ST-SR-RDS-01/Users/st* -type d -name "Documents")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+#######################BackUpSL##############################################################################
+cd /mnt/_SHARE_/BackUpST/Desktop/
+UN=$(find /mnt/RDS/ST-SR-RDS-01/Users/sl* -type d -name "Desktop")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+cd /mnt/_SHARE_/BackUpST/Documents/
+UN=$(find /mnt/RDS/ST-SR-RDS-01/Users/sl* -type d -name "Documents")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+cd /mnt/_SHARE_/
+echo "Окончание архивации ST-SR-RDS-01: `date +%X-%d-%m-%G`" >> log7z
+umount /mnt/RDS/ST-SR-RDS-01
+#############################################################################################################
+}
+#############################################################################################################
+function BackUpAV {
+#######################BackUpAV##############################################################################
+mount -t cifs -o ro,user='администратор',password='PASS' //192.168.101.2/c$ /mnt/RDS/AV-SR-RDS-01
+cd /mnt/_SHARE_/
+echo "AV-SR-RDS-01" >> log7z
+echo "Начало архивации: `date +%X-%d-%m-%G`" >> log7z
+cd /mnt/_SHARE_/BackUpAV/PUBLIC/
+7z a -$MX AV_BUH_`date +%d-%m-%G`.7z /mnt/RDS/AV-SR-RDS-01/Users/_AV_/_base_crm_/
+cd /mnt/_SHARE_/BackUpAV/Desktop/
+UN=$(find /mnt/RDS/AV-SR-RDS-01/Users/av* -type d -name "Desktop")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+cd /mnt/_SHARE_/BackUpAV/Documents/
+UN=$(find /mnt/RDS/AV-SR-RDS-01/Users/av* -type d -name "Documents")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+#######################BackUpEU##############################################################################
+cd /mnt/_SHARE_/BackUpAV/PUBLIC/
+7z a -$MX EU_BUH_`date +%d-%m-%G`.7z /mnt/RDS/AV-SR-RDS-01/Users/_EU_BUH_
+cd /mnt/_SHARE_/BackUpAV/Desktop/
+UN=$(find /mnt/RDS/AV-SR-RDS-01/Users/eu* -type d -name "Desktop")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+cd /mnt/_SHARE_/BackUpAV/Documents/
+UN=$(find /mnt/RDS/AV-SR-RDS-01/Users/eu* -type d -name "Documents")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+cd /mnt/_SHARE_/
+echo "Окончание архивации AV-SR-RDS-01: `date +%X-%d-%m-%G`" >> log7z
+umount /mnt/RDS/AV-SR-RDS-01
+#############################################################################################################
+}
+#############################################################################################################
+function BackUpPR {
+#######################BackUpPR##############################################################################
+mount -t cifs -o ro,user='администратор',password='PASS' //192.168.104.233/c$ /mnt/RDS/PR-SR-RDS-01
+cd /mnt/_SHARE_/
+echo "PR-SR-RDS-01" >> log7z
+echo "Начало архивации: `date +%X-%d-%m-%G`" >> log7z
+cd /mnt/_SHARE_/BackUpPR/PUBLIC/
+7z a -$MX _PR_BUH_`date +%d-%m-%G`.7z /mnt/RDS/PR-SR-RDS-01/Users/_PR_BUH_/_bases_1c_/
+cd /mnt/_SHARE_/BackUpPR/Desktop/
+UN=$(find /mnt/RDS/PR-SR-RDS-01/Users/pr* -type d -name "Desktop")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+cd /mnt/_SHARE_/BackUpPR/Documents/
+UN=$(find /mnt/RDS/PR-SR-RDS-01/Users/pr* -type d -name "Documents")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+cd /mnt/_SHARE_/
+echo "Окончание архивации PR-SR-RDS-01: `date +%X-%d-%m-%G`" >> log7z
+umount /mnt/RDS/PR-SR-RDS-01
+#############################################################################################################
+}
+#############################################################################################################
+function BackUpTG {
+#######################BackUpTG##############################################################################
+mount -t cifs -o ro,user='администратор',password='PASS' //192.168.110.237/c$ /mnt/RDS/TG-SR-RDS-01
+cd /mnt/_SHARE_/
+echo "TG-SR-RDS-01" >> log7z
+echo "Начало архивации: `date +%X-%d-%m-%G`" >> log7z
+cd /mnt/_SHARE_/BackUpTG/PUBLIC/
+7z a -$MX _TG_BUH_`date +%d-%m-%G`.7z /mnt/RDS/TG-SR-RDS-01/Users/_TG_BUH_/_bases_1c_/
+7z a -$MX _TG_OK_`date +%d-%m-%G`.7z /mnt/RDS/TG-SR-RDS-01/Users/_TG_OK_/
+7z a -$MX _TG_YUR_`date +%d-%m-%G`.7z /mnt/RDS/TG-SR-RDS-01/Users/_TG_YUR_/
+cd /mnt/_SHARE_/BackUpTG/Desktop/
+UN=$(find /mnt/RDS/TG-SR-RDS-01/Users/tg* -type d -name "Desktop")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+cd /mnt/_SHARE_/BackUpTG/Documents/
+UN=$(find /mnt/RDS/TG-SR-RDS-01/Users/tg* -type d -name "Documents")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+cd /mnt/_SHARE_/
+echo "Окончание архивации TG-SR-RDS-01: `date +%X-%d-%m-%G`" >> log7z
+umount /mnt/RDS/TG-SR-RDS-01
+#############################################################################################################
+}
+#############################################################################################################
+function BackUpEU {
+#######################BackUpEU##############################################################################
+mount -t cifs -o ro,user='администратор',password='PASS' //192.168.115.231/c$ /mnt/RDS/EU-SR-RDS-01
+cd /mnt/_SHARE_/
+echo "EU-SR-RDS-01" >> log7z
+echo "Начало архивации: `date +%X-%d-%m-%G`" >> log7z
+##cd /mnt/_SHARE_/BackUpEU/PUBLIC/
+##7z a -$MX EU_BUH_`date +%d-%m-%G`.7z /mnt/RDS/EU-SR-RDS-01/Users/_EU_BUH_
+cd /mnt/_SHARE_/BackUpEU/Desktop/
+UN=$(find /mnt/RDS/EU-SR-RDS-01/Users/eu* -type d -name "Desktop")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+cd /mnt/_SHARE_/BackUpEU/Documents/
+UN=$(find /mnt/RDS/EU-SR-RDS-01/Users/eu* -type d -name "Documents")
+for i in $UN
+do
+NPF=$(echo $i | awk -F"/" '{print$6}')
+7z a -$MX "$NPF"_`date +%d-%m-%G`.7z $i
+done
+cd /mnt/_SHARE_/
+echo "Окончание архивации EU-SR-RDS-01: `date +%X-%d-%m-%G`" >> log7z
+umount /mnt/RDS/EU-SR-RDS-01
+#############################################################################################################
+}
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
+VolBF=153600
+MX=mx2
+mount -t nfs 192.168.1.81:/_SHARE_ /mnt/_SHARE_
+DeleteBackUp
+BackUpAU&
+sleep 15
+BackUpTG&
+sleep 15
+BackUpST&
+sleep 15
+BackUpAV&
+sleep 15
+BackUpPR&
+sleep 15
+BackUpEU
+sleep 10800
+echo "$(du -sh BackUp*)" >> log7z
+cd /mnt/
+umount /mnt/_SHARE_/

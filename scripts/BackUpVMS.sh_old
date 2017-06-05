@@ -1,0 +1,46 @@
+#!/bin/sh
+########################Переменные#################################################
+VMNAMEFBU=web
+PATHBU=/vmfs/volumes/d37ea5e1-3d5ef890/BackUpVMS/`date +%d-%m-%G`
+mkdir $PATHBU
+##########################Удаление старых бэкапов#################################
+spacebackup=`du -sm $PATHBU/../ | awk '{print$1}'`
+if [ $spacebackup -gt 4194304 ]
+   then
+       cd $PATHBU/../
+        while [ `du -sm $PATHBU/../ | awk '{print$1}'` -gt "4194304" ]
+        do
+        ls -t $PATHBU/../ | tail -n1 | xargs rm -rf '{}'
+    done
+fi
+########################Поиск включённых виртуалок#################################
+VMID=$(/usr/bin/vim-cmd vmsvc/getallvms | grep ^[0-9] | awk '{print $1}')
+# Просматриваем все виртуалки в цикле
+for vm in $VMID
+do
+# Получаем их состояние (turned on, off, whatever)
+STATE=$(/usr/bin/vim-cmd vmsvc/power.getstate $vm | tail -1 | awk '{print $2}')
+VMNAME=$(/usr/bin/vim-cmd vmsvc/get.summary $vm | egrep 'name' | awk '{FS="\""} {print$2}')
+VMNAMESR=$(/usr/bin/vim-cmd vmsvc/get.summary $vm | egrep 'name' | awk '{FS="-"} {print$3}')
+PATHDS=$(/usr/bin/vim-cmd vmsvc/get.datastores $vm | egrep 'url' | awk '{print $2}')
+if [ "$VMNAMEFBU" = "$VMNAMESR" ]
+then
+if [ "$STATE" = "on" ]
+then
+##########################Создание новых бэкапов###################################
+vim-cmd vmsvc/power.shutdown $vm
+while [ "$STATE" = "on" ]
+do
+STATE=$(/usr/bin/vim-cmd vmsvc/power.getstate $vm | tail -1 | awk '{print $2}')
+done
+echo $VMNAME >> $PATHBU/../log
+echo "Начало копирования: `date +%X--%d-%m-%G`" >> $PATHBU/../log
+mkdir $PATHBU/$VMNAME
+cp -r $PATHDS/$VMNAME/*.vmx $PATHBU/$VMNAME
+vmkfstools -i $PATHDS/$VMNAME/"$VMNAME".vmdk $PATHBU/$VMNAME/"$VMNAME".vmdk
+echo "Завершение копирования: `date +%X--%d-%m-%G`" >> $PATHBU/../log
+vim-cmd vmsvc/power.on $vm
+fi
+fi
+done
+exit 0

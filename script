@@ -1,0 +1,16 @@
+#!/bin/sh
+PATHBUT=/vmfs/volumes/d37ea5e1-3d5ef890/BackUpVMS/`date +%d-%m-%G`
+PATHBUN=/vmfs/volumes/02bd7f89-ec097b21/BackUpVMS/`date +%d-%m-%G`
+mkdir $PATHBUT
+mkdir $PATHBUN
+##########################Удаление старых бэкапов Thecus#################################
+spacebackup=`du -sm $PATHBUT/../ | awk '{print$1}'`
+if [ $spacebackup -gt 3145728 ]
+   then
+       cd $PATHBUT/../
+        while [ `du -sm $PATHBUT/../ | awk '{print$1}'` -gt "3145728" ]
+        do
+        ls -t $PATHBUT/../ | tail -n1 | xargs rm -rf '{}'
+    done
+fi
+
